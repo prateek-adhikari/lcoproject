@@ -1,0 +1,12 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+<div class="col-12">
+    <div class="container faq">
+        {% for faq in faqz %}
+        <div class="quest">
+            <p class="faq_ques">{{faq.question}}</p>
+        </div>
+        <p class="faq_ans">{{faq.answer}}</p>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}

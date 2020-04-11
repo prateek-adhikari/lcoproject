@@ -1,0 +1,31 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+<div class="col-12 team-section">
+    <div class="team_head">
+        <h1>
+            <blockquote>Team</blockquote>
+        </h1>
+    </div>
+</div>
+<div class="col-12">
+    <div class="row team">
+        {% for player_member in member %}
+        <div class="col-lg-4 col-md-4 col-sm-6 team-index" style="width: 18rem;">
+            <span class="player-num">{{player_member.player_num}}</span>
+            <div class="player-img-wrap">
+                <div class="player-img">
+                    <img class="card-img-top img" alt="Card image cap" src="{{player_member.player_image.url}}">
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-title name">{{player_member.player_f_name}}<br>{{player_member.player_l_name}}</p>
+                <div>
+                    <span>{{player_member.player_pos}}</span>
+                    <span><strong>{{player_member.player_height_f}}</strong>"ft"<strong>{{player_member.player_height_i}}</strong>" in | "<strong>{{player_member.player_weight}}</strong> "lbs" </span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

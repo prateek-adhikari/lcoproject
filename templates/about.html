@@ -1,0 +1,27 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+<div class="col-12 about">
+    <div class="img-div">
+        <img class="abt-img" src="{% static 'img/img3.png' %}">
+    </div>
+    <div class="img-div">
+        <p class="abt-title">Our Story</p>
+    </div>
+    <div class="container abt-story">
+        <p class="abt-para">
+            {% for stry in story %} {{stry.our_story}} {% endfor %}
+        </p>
+    </div>
+    <div class="img-div">
+        <p class="abt-title">Key Moments</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for momentz in moment %}
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <img class="abt-keym" src="{{momentz.gallery.url}}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
